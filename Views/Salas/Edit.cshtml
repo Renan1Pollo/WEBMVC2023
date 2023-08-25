@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
@@ -18,6 +17,11 @@
                 <label asp-for="descricao" class="control-label"></label>
                 <input asp-for="descricao" class="form-control" />
                 <span asp-validation-for="descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="monitor" class="control-label"></label>
+                <input asp-for="monitor" class="form-control" />
+                <span asp-validation-for="monitor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="equipamentos" class="control-label"></label>

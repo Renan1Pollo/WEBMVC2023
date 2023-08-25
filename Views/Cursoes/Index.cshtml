@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WEBMVC.Models.Sala>
+﻿@model IEnumerable<WEBMVC.Models.Curso>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,15 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.descricao)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.monitor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.equipamentos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.situacao)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -32,15 +23,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.monitor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.equipamentos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.situacao)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
