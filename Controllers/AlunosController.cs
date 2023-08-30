@@ -9,23 +9,23 @@ using WEBMVC.Models;
 
 namespace WEBMVC.Controllers
 {
-    public class AlunoesController : Controller
+    public class AlunosController : Controller
     {
         private readonly Contexto _context;
 
-        public AlunoesController(Contexto context)
+        public AlunosController(Contexto context)
         {
             _context = context;
         }
 
-        // GET: Alunoes
+        // GET: Alunos
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Alunos.Include(a => a.curso);
             return View(await contexto.ToListAsync());
         }
 
-        // GET: Alunoes/Details/5
+        // GET: Alunos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Alunos == null)
@@ -44,14 +44,14 @@ namespace WEBMVC.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Create
+        // GET: Alunos/Create
         public IActionResult Create()
         {
             ViewData["cursoID"] = new SelectList(_context.Cursos, "id", "descricao");
             return View();
         }
 
-        // POST: Alunoes/Create
+        // POST: Alunos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -68,7 +68,7 @@ namespace WEBMVC.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Edit/5
+        // GET: Alunos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Alunos == null)
@@ -85,7 +85,7 @@ namespace WEBMVC.Controllers
             return View(aluno);
         }
 
-        // POST: Alunoes/Edit/5
+        // POST: Alunos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -121,7 +121,7 @@ namespace WEBMVC.Controllers
             return View(aluno);
         }
 
-        // GET: Alunoes/Delete/5
+        // GET: Alunos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Alunos == null)
@@ -140,7 +140,7 @@ namespace WEBMVC.Controllers
             return View(aluno);
         }
 
-        // POST: Alunoes/Delete/5
+        // POST: Alunos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
